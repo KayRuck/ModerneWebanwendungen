@@ -1,4 +1,4 @@
-#1  Aufgabenbeschreibung
+# 1Aufgabenbeschreibung
 
 Abgabe  ist 31.08.2018  für  eine  Meldung  zum  Wintersemester
 Für  das  WPFMW  -  Moderne  Webanwendungen  -  ist  eine  Webseite  zu  erstellen,  die  min-destens  folgende  Punkte  umfasst:
