@@ -14,6 +14,8 @@ Für  das  WPFMW  -  Moderne  Webanwendungen  -  ist  eine  Webseite  zu  erstel
 - 10  Punkte: Komprimierung  mit  Deflate  oder  GZIP  via  htaccess  oder  vorkomprimiert
 - 10  Punkte: Caching  mit  htaccess  oder  PHP  (z.  B.  phpfastcache)
 - 10  Punkte: drei  Suchmaschinenoptimierungen
+
+
 =  110  Punkte  =  110%
 
 100%  =  1.0,  das  heißt  eine  Anforderung  dient  als  Ausgleich  für  evtl.  fehlende  Punkte und  wie  in  jedem  Projekt  gehört  auch  eine Dokumentation dazu!
