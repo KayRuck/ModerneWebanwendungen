@@ -17,8 +17,10 @@
 </head>
 <body>
 <header>
+    <?php
 
-    <div class="navbar">
+    ?>
+    <div id="myNavbar" class="navbar">
 
         <?php
         //Aktive URL ermitteln
@@ -26,6 +28,7 @@
 
         // TODO Basti: prüfen ob eingeloggt oder nicht uns entsprechende Funktion hinterlegen.
         $isLogin = false;
+
         if ($isLogin) {
             // Nurzer ist bereits eingeoggt
             $login = "<a class='navbarAnker' id=\"logoutBtn\" > Logout </a>";
@@ -36,9 +39,10 @@
         switch ($path) {
             case "/mowe/doc/index.php":
                 ?>
-                <a class="navbarAnker" href="." class="active"><i class="fa fa-home"></i> Home</a>
+                <a class="navbarAnker active" href="."><i class="fa fa-home"></i> Home</a>
                 <a class="navbarAnker" href="books.php"><i class="fa fa-book"></i> Büchersuche</a>
                 <a class="navbarAnker" href="mybooks.php"><i class="fa fa-bookmark"></i> Meine Bücher </a>
+                <a class="navbarAnker icon active" href="javascript:void(0);" onclick="toggleResNavbar()">&#9776;</a> <!-- TODO inline JS ausbauen -->
                 <?php
                 echo $login;
                 break;
@@ -46,8 +50,10 @@
             case "/mowe/doc/books.php":
                 ?>
                 <a class="navbarAnker" href="./"><i class="fa fa-home"></i> Home</a>
-                <a class="navbarAnker" href="./books.php" class="active"><i class="fa fa-book"></i> Büchersuche</a>
+                <a class="navbarAnker active" href="./books.php"><i class="fa fa-book"></i> Büchersuche</a>
                 <a class="navbarAnker" href="mybooks.php"><i class="fa fa-bookmark"></i> Meine Bücher </a>
+                <a class="navbarAnker icon active" href="javascript:void(0);" onclick="toggleResNavbar()">&#9776;</a> <!-- TODO inline JS ausbauen -->
+
                 <?php
                 echo $login;
                 break;
@@ -56,7 +62,9 @@
                 ?>
                 <a class="navbarAnker" href="./"><i class="fa fa-home"></i> Home</a>
                 <a class="navbarAnker" href="books.php"><i class="fa fa-book"></i> Büchersuche</a>
-                <a class="navbarAnker" href="./mybooks.php" class="active"><i class="fa fa-bookmark"></i> Meine Bücher </a>
+                <a class="navbarAnker active" href="./mybooks.php"><i class="fa fa-bookmark"></i> Meine Bücher </a>
+                <a class="navbarAnker icon active" href="javascript:void(0);" onclick="toggleResNavbar()">&#9776;</a> <!-- TODO inline JS ausbauen -->
+
                 <?php
                 echo $login;
                 break;
@@ -65,14 +73,13 @@
                 <a class="navbarAnker" href="./"><i class="fa fa-home"></i> Home</a>
                 <a class="navbarAnker" href="books.php"><i class="fa fa-book"></i> Büchersuche</a>
                 <a class="navbarAnker" href="./mybooks.php"><i class="fa fa-bookmark"></i> Meine Bücher </a>
+                <a class="navbarAnker icon active" href="javascript:void(0);" onclick="toggleResNavbar()">&#9776;</a> <!-- TODO inline JS ausbauen -->
+
                 <?php
                 echo $login;
         }
 
-        require_once ("login.php");
-
         ?>
-
 
     </div>
 </header>

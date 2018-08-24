@@ -1,7 +1,7 @@
 <?php require_once('header.php') ?>
 
 
-    <main>
+    <main id="myMain">
         <h1>Impressum</h1>
 
         <h2>Legal stuff, you know.</h2>

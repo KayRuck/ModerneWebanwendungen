@@ -2,7 +2,7 @@
 <?php require_once('header.php') ?>
 
 
-<main>
+<main id="myMain">
 
     <h2>Passwort vergessen</h2>
     <p> Bitte Email Adresse und Benutzernamen eingeben</p>
