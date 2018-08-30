@@ -54,21 +54,19 @@ DROP TABLE IF EXISTS `bcg`.`Userbook` ;
 CREATE TABLE IF NOT EXISTS `bcg`.`Userbook` (
   `username` VARCHAR(50) NOT NULL,
   `buch_id` INT NOT NULL,
-  `bewertung` INT NULL,
-  `status` INT NULL,
-  PRIMARY KEY (`username`, `buch_id`),
-  INDEX `fk_Userbook_Book1_idx` (`buch_id` ASC),
+  `isbn13` VARCHAR(13) NOT NULL,
+  `titel` VARCHAR(250) NULL,
+  `autor` VARCHAR(300) NULL,
+  `verlag` VARCHAR(45) NULL,
+  `status` VARCHAR(50) NULL,
+  PRIMARY KEY (`username`, `isbn13`),
   CONSTRAINT `fk_Userbook_User`
     FOREIGN KEY (`username`)
     REFERENCES `bcg`.`User` (`username`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Userbook_Book1`
-    FOREIGN KEY (`buch_id`)
-    REFERENCES `bcg`.`Book` (`buch_id`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
