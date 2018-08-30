@@ -14,9 +14,8 @@ require_once ("login.php");
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Eigene Funktionen einbinden -->
-    <script src="../script/functions.js"></script>
-    <script src="../script/googleBooksAPI.js"></script>
+
+    <script src="../script/srcipt.min.js"></script>
 
 </footer>
 
