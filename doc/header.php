@@ -9,8 +9,6 @@
     <!-- -->
     <link rel="stylesheet" href="../styles/format.css">
     <!-- -->
-    <link rel="stylesheet" href="../styles/layout.css">
-    <!-- -->
     <link rel="stylesheet" href="../styles/components.css">
 
     <title>Bücherverwaltung</title>
@@ -26,7 +24,6 @@
         //Aktive URL ermitteln
         $path = $_SERVER['PHP_SELF'];
 
-        // TODO Basti: prüfen ob eingeloggt oder nicht uns entsprechende Funktion hinterlegen.
         $isLogin = false;
 
         if ($isLogin) {

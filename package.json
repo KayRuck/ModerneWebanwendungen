@@ -1,0 +1,26 @@
+{
+  "name": "modernewebanwendungen",
+  "version": "1.0.0",
+  "description": "Prototype der Website für das Modul Moderne Webanwendungen von Studierenden der Technischen Hochschule Köln Fachrichtung Informatik.",
+  "main": "\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[D",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KayRuck/ModerneWebanwendungen"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-csso": "^2.2.1"
+  },
+  "devDependencies": {
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-image": "^4.2.0",
+    "grunt-purifycss": "^0.1.2"
+  }
+}
