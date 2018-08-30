@@ -56,7 +56,7 @@
 
             <li><h3>Komprimierung</h3></li>
             <p>
-                <!-- TODO Kay: -->
+                Mittels .htaccess durchgeführt.
             </p>
 
             <li><h3>Caching</h3></li>
