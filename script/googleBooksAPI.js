@@ -56,9 +56,9 @@ $(document).ready(function () {
                 tableHtml += "<td>" + arrBuecher[i].volumeInfo.publisher + "</td>";
                 tableHtml += "<td>" + "<img class='searchImg' src=\"" + arrBuecher[i].volumeInfo.imageLinks.thumbnail + "\"></td>"; console.log(isbn);
                 tableHtml += "<td>" +
-                    "                   <a href='mybooks.php?isbn="+isbn+"&status=lesend'><button type='button' name='amReadingBtn'> Am Lesen </button></a> <br>" +
-                    "                   <a href='mybooks.php?isbn="+isbn+"&status=willLesen'><button type='button' name='wantToReadBtn'> Will ich lesen </button></a> <br>" +
-                    "                   <a href='mybooks.php?isbn="+isbn+"&status=habeGelesen'><button type='button' name='haveReadBtn'> Habe ich gelesen</button></a> <br> " + "</td>";
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=lesend'><button class='myList-btn' type='button' name='amReadingBtn'> Am Lesen </button></a> <br>" +
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=willLesen'><button class='myList-btn' type='button' name='wantToReadBtn'> Will ich lesen </button></a> <br>" +
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=habeGelesen'><button class='myList-btn' type='button' name='haveReadBtn'> Habe ich gelesen</button></a> <br> " + "</td>";
                 tableHtml += "</tr>";
 
                 document.getElementById("apiContent").innerHTML = tableHtml;

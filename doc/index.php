@@ -4,41 +4,30 @@
 <main id="myMain">
     <h1>Bücherclub Gummersbach</h1>
 
-    <h2>Neuerscheinungen im September</h2>
+    <h2>Bestseller im September</h2>
 
-    <!-- Slideshow container -->
+    <!-- silder -->
     <div class="slider">
 
-        <!-- Full-width images with number and caption text -->
         <div class="slider-element">
-            <div class="numbertext">1 / 3</div>
-            <!-- TODO inline css entfernen! -->
-            <img src="../images/darkSide404.png" style="width:33%">
-            <img src="../images/darkSide404.png" style="width:33%">
-            <img src="../images/darkSide404.png" style="width:33%">
-            <div class="text">Caption Text</div>
+            <img class="slider-pic" src="../images/DeathNote.jpg">
+            <img class="slider-pic" src="../images/OnePiece.jpg">
+            <img class="slider-pic" src="../images/OnePunchMan.jpg">
+            <div class="text">Kategorie Manga.</div>
         </div>
 
         <div class="slider-element">
-            <div class="numbertext">2 / 3</div>
-            <img src="../images/minion404.jpg" style="width:33%">
-            <img src="../images/minion404.jpg" style="width:33%">
-            <img src="../images/minion404.jpg" style="width:33%">
-            <div class="text">Caption Two</div>
+            <img class="slider-pic" src="../images/AnsonstenNurDerTod.jpg">
+            <img class="slider-pic" src="../images/wolfsspinne.jpg">
+            <img class="slider-pic" src="../images/BeforeSunrise.jpg">
+            <div class="text">Kategorie Thriller.</div>
         </div>
-
-        <div class="slider-element">
-            <div class="numbertext">3 / 3</div>
-            <img src="../images/schalke.png" style="width:33%">
-            <img src="../images/schalke.png" style="width:33%">
-            <img src="../images/schalke.png" style="width:33%">
-            <div class="text">Caption Three</div>
-        </div>
-
-        <!-- Next and previous buttons -->
+        <br>
+        <!-- next und prev btn -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+
     <br>
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 

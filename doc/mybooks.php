@@ -6,7 +6,6 @@
         <h1>Meine Bücher</h1>
 
         <?php
-        // TODO abfrage ob eingeloggt
         if (!isset($_SESSION['username'])) {
             ?>
             <p>Sie sind nicht eingeloggt. Bitte loggen Sie sich ein um auf dieses feature zugreifen zu können.</p>
@@ -73,7 +72,7 @@
                     $datensatz = $rightQuery;
                     if(mysqli_num_rows($rightQuery))
                     {
-                        echo "<table>";
+                        echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
                         echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th> </tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
                             echo "<tr>";
@@ -82,7 +81,7 @@
                             echo "<td>" . $datensatz['verlag'] . "</td>";
                             echo "</tr>";
                         }
-                        echo "</table>";
+                        echo "</table></div>";
                     }
                     ?>
                 </p>
@@ -99,7 +98,7 @@
 
                     $datensatz = $rightQuery;
                     if(mysqli_num_rows($rightQuery)) {
-                        echo "<table>";
+                        echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
                         echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> </tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
                             echo "<tr>";
@@ -110,7 +109,7 @@
                             echo "</tr>";
                         }
                     }
-                    echo "</table>";
+                    echo "</table></div>";
                     ?>  </p>
             </div>
 
@@ -124,7 +123,7 @@
                     $rightQuery = mysqli_query($con, $query);
                     $datensatz = $rightQuery;
                     if(mysqli_num_rows($rightQuery)) {
-                        echo "<table>";
+                        echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
                         echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> </tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
                             echo "<tr>";
@@ -132,7 +131,7 @@
                             echo "<td>" . $datensatz['autor'] . "</td>";
                             echo "<td>" . $datensatz['verlag'] . "</td>";
                             echo "<td>" . $datensatz['isbn13'] . "</td>";
-                            echo "</tr>";
+                            echo "</tr></div>";
                         }
                     }
                     echo "</table>";

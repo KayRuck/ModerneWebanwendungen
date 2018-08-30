@@ -33,6 +33,10 @@ main {
     margin-right: 2em;
 }
 
+.slider-pic {
+    width: 10em;
+}
+
 .resMain {
     margin-top: 23em;
 }
@@ -241,7 +245,7 @@ img {
     padding: 8px 12px;
     bottom: 8px;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 /* Number text (1/3 etc)*/
@@ -449,4 +453,14 @@ Button:hover {
 
 .regis-btn:hover {
     opacity: 1;
+}
+
+
+.myList-btn {
+    background-color: #aba5af;
+    color: white;
+    padding: 10px 15px;
+    border: solid;
+    cursor: pointer;
+    width: 100%;
 }
