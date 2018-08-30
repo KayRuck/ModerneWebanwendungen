@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 */
     grunt.initConfig({
 
-        /* gereral */
+        /* gereral x*/
         concat: {
           css:{
               src:['styles/format.css', 'styles/components.css'],
