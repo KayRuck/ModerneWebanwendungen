@@ -21,29 +21,60 @@ module.exports = function (grunt) {
               src:['styles/format.css', 'styles/components.css'],
               dest: 'styles/styles.css',
           },
-          js:{
+         /* js:{
               src:['script/functions.js', 'script/googleBooksAPI.js'],
               dest: 'script/scripts.js'
 
-          }
+          }*/
         },
         watch: {
             scripts: {
-                css:{
+                    files: ['styles/styles.css'],
+                    tasks: ['autoprefixer','purifycss','csso'],
+               /* css:{
                     files: ['styles/styles.css'],
                     tasks: ['autoprefixer','purifycss','csso'],
                 },
                 js:{
                     files: ['script/scripts.js'],
-                    tasks: ['autoprefixer','purifycss','csso'],
-                }
+                    tasks: ['compress'],
+                }*/
             }
         },
 
+        /* JS
+        uglify: {
+            options: {
+                report: 'gzip'
+            },
+            all: {
+                expand: true,
+                flatten: true,
+                cwd: 'script/',
+                src: ['script/functions.js', 'script/googleBooksAPI.js'],
+                dest: 'script/scripts.min.js',
+            }
+
+        },
+        compress: {
+            main: {
+                options: {
+                    mode: 'gzip'
+                },
+                expand: true,
+                cwd: 'script/',
+                src: ['script/scripts.js'],
+                dest: 'script/scripts.min.js'
+            }
+        },*/
+
         /* CSS */
         autoprefixer: {
+            options: {
+                // Task-specific options go here.
+            },
             your_target: {
-                file: {
+                files: {
                     'styles/styles.pref.css': ['styles/styles.css']
                 }
             }
@@ -97,6 +128,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-image');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-
-
+    //   grunt.loadNpmTasks('grunt-contrib-uglify');
+    //   grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-csso');
 };
