@@ -21,11 +21,11 @@ module.exports = function (grunt) {
               src:['styles/format.css', 'styles/components.css'],
               dest: 'styles/styles.css',
           },
-         /* js:{
+         js:{
               src:['script/functions.js', 'script/googleBooksAPI.js'],
               dest: 'script/scripts.js'
 
-          }*/
+          }
         },
         watch: {
             scripts: {
