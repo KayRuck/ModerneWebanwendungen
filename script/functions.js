@@ -97,3 +97,24 @@ function showLogin() {
 function closeLogin() {
     document.getElementById('login').style.display ='none';
 }
+
+/*function amReading(var lurch)
+{
+    if(window.XMLHttpRequest)
+    {
+        sendDudes = new XMLHttpRequest();
+    }
+
+    sendDudes.open("GET", "mybooks.php?isbn=" + lurch, true);
+    sendDudes.send();
+}
+
+function wantToRead(var lurch)
+{
+
+}
+
+function haveRead(var lurch)
+{
+
+}*/

@@ -16,7 +16,6 @@
                     <th>Autor</th>
                     <th>Verlag</th>
                     <th>Bild</th>
-                    <th id="rating">Bewertung</th>
                     <th>Meine Liste</th>
                 </tr>
                 </thead>
