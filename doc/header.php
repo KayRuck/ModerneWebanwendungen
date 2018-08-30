@@ -15,20 +15,21 @@
 </head>
 <body>
 <header>
-    <?php
-
-    ?>
     <div id="myNavbar" class="navbar">
 
         <?php
+        session_start();
         //Aktive URL ermitteln
         $path = $_SERVER['PHP_SELF'];
-
-        $isLogin = false;
-
+        if(isset($_SESSION['username']))
+        {
+            $isLogin = true;
+        }
+        else
+            $isLogin = false;
         if ($isLogin) {
-            // Nurzer ist bereits eingeoggt
-            $login = "<a class='navbarAnker' id=\"logoutBtn\" > Logout </a>";
+            // Nutzer ist bereits eingeloggt
+            $login = "<a class='navbarAnker' id=\"logoutBtn\" href='logout.php'>Logout</a>";
         } else {
             // Nutzer ist noch nicht eingeloggt
             $login = "<a class='navbarAnker' id=\"loginBtn\" onclick='showLogin()'> Login </a>";

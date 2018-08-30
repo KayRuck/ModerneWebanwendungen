@@ -18,9 +18,6 @@ $(document).ready(function () {
             var arrBuecher = data.items;
 
             var tableHtml = "";
-
-
-
             // gehe die Schleife durch alle Buecher durch.
             for (var i = 0; i < arrBuecher.length; i++) {
                 var ISBN_13 = " ";
@@ -40,16 +37,32 @@ $(document).ready(function () {
                 else ISBN_13 = arrBuecher[i].volumeInfo.industryIdentifiers[0].identifier;
 
                 // console.log(ISBN_13);
+                var isbn = ISBN_13;
+                var title = arrBuecher[i].volumeInfo.title;
+                var author = arrBuecher[i].volumeInfo.authors;
+                var publisher = arrBuecher[i].volumeInfo.publisher;
+
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                }
+
+                xmlhttp.open("GET", "writeToDB.php?isbn=" + isbn + "&title=" + title + "&author=" + author + "&publisher=" + publisher, true);
+                xmlhttp.send();
 
                 tableHtml += "<tr>";
                 tableHtml += "<td>" + ISBN_13 + "</td>";
                 tableHtml += "<td>" + arrBuecher[i].volumeInfo.title + "</td>";
                 tableHtml += "<td>" + arrBuecher[i].volumeInfo.authors + "</td>";
                 tableHtml += "<td>" + arrBuecher[i].volumeInfo.publisher + "</td>";
-                tableHtml += "<td>" + "<img class='searchImg' src=\"" + arrBuecher[i].volumeInfo.imageLinks.thumbnail + "\"></td>";
+                tableHtml += "<td>" + "<img class='searchImg' src=\"" + arrBuecher[i].volumeInfo.imageLinks.thumbnail + "\"></td>"; console.log(isbn);
+                tableHtml += "<td>" +
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=lesend'><button type='button' name='amReadingBtn'> Am Lesen </button></a> <br>" +
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=willLesen'><button type='button' name='wantToReadBtn'> Will ich lesen </button></a> <br>" +
+                    "                   <a href='mybooks.php?isbn="+isbn+"&status=habeGelesen'><button type='button' name='haveReadBtn'> Habe ich gelesen</button></a> <br> " + "</td>";
                 tableHtml += "</tr>";
 
                 document.getElementById("apiContent").innerHTML = tableHtml;
+
 
             }
 
@@ -57,6 +70,6 @@ $(document).ready(function () {
             alert('fehler');
             console.log('fehler');
         });
-
+    //onclick='amReading("+isbn+")
    // });
 });
