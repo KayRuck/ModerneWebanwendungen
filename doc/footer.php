@@ -3,7 +3,7 @@
 // html fuer das login-popup einbinden
 require_once ("login.php");
 ?>
-
+<br><br><br><br>
 <footer>
     <div class="footer">
         <a href="aboutus.php">Über&nbsp;uns</a>

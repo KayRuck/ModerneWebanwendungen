@@ -27,20 +27,20 @@ module.exports = function (grunt) {
 
           }
         },
-        watch: {
+        /*watch: {
             scripts: {
                     files: ['styles/styles.css'],
                     tasks: ['autoprefixer','purifycss','csso'],
-               /* css:{
+                css:{
                     files: ['styles/styles.css'],
                     tasks: ['autoprefixer','purifycss','csso'],
                 },
                 js:{
                     files: ['script/scripts.js'],
                     tasks: ['compress'],
-                }*/
+                }
             }
-        },
+        },*/
 
         /* JS
         uglify: {
@@ -126,7 +126,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-purifycss');
     grunt.loadNpmTasks('grunt-image');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    //   grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     //   grunt.loadNpmTasks('grunt-contrib-uglify');
     //   grunt.loadNpmTasks('grunt-contrib-compress');

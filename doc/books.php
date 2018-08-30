@@ -20,14 +20,7 @@
                 </tr>
                 </thead>
                 <tbody id="apiContent" >
-                <?php
-                // TODO Daten für die Tabelle auslesen. JSON-API(Kay) + Datenbank(Basti)
-                //$query = getPersonen();
-                //while ($person = mysqli_fetch_array($query)) {
-                ?>
-
-                <!-- Dummy Data -->
-                <?php //} ?>
+                    <!-- Hier wird der API Content geladen. siehe /script/googleBooksAPI.js -->
                 </tbody>
             </table>
         </div>
