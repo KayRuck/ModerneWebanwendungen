@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `bcg`.`Userbook` (
   `autor` VARCHAR(300) NULL,
   `verlag` VARCHAR(45) NULL,
   `status` VARCHAR(50) NULL,
+  `bewertung` INT NULL,
   PRIMARY KEY (`username`, `isbn13`),
   CONSTRAINT `fk_Userbook_User`
     FOREIGN KEY (`username`)

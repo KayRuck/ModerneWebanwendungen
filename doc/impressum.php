@@ -22,14 +22,15 @@
 
             <li><h3>Session</h3></li>
             <p>
-                Die Sessions wurden für einen Nutzerlogin verwendet.
-                <!-- TODO Basti: kurz und knap schreiben wo und wie du die Sessions genutzt hast. -->
+                Die Sessions wurden in einer Login-Funktion genutzt, um Nutzer über die Session identifizieren zu können.
+                Über eine Logout-Funktion wird die Session wieder zerstört. Das Session_start() wird automatisch bei jeder Seite aufgerufen,
+                da es über die header.php aufgerufen wird, welche ohnehin in jeder weiteren .php-Datei aufgerufen wird.
             </p>
 
             <li><h3>Datenbank-Anbindung</h3></li>
             <p>
                 In unserer Datenbank werden alle Bücher gespeichert, welche über die Google-Books-API abgerufen werden.
-                Nutzer können diese markieren und somit in private Listen speichern. (books.php, mybooks.php, googleBooksAPI.js)
+                Nutzer können diese markieren und somit in privaten Listen speichern. (books.php, mybooks.php, googleBooksAPI.js, db.sql, functions.php)
             </p>
 
             <li><h3>AJAX-Request mit Antwort im JSON-Format</h3></li>
@@ -39,7 +40,7 @@
 
             <li><h3>JS-Framework/Toolkit/Node.js</h3></li>
             <p>
-                Es wurde Grunt sowie Grunt plugins verwendet, welche via npm gemanagt wurden.
+                Es wurde Grunt sowie Grunt plugins verwendet, welche via npm gemanagt wurden. (Gruntfile.js)
             </p>
 
             <li><h3>min. eine JS-Funktion</h3></li>
@@ -50,8 +51,8 @@
 
             <li><h3>Minimierte CSS-/JS-Datei</h3></li>
             <p>
-                Alle CSS-Dateien wurden mittels Grunt zusammengeführt und minimiert.
-                Alle JS-Dateien wurden mittels eines Onlinetools zusammengeführt und minimiert.
+                Alle CSS-Dateien wurden mittels Grunt zusammengeführt und minimiert. (style.min.css)
+                Alle JS-Dateien wurden mittels eines Onlinetools zusammengeführt und minimiert. (script.min.js)
             </p>
 
             <li><h3>Komprimierung</h3></li>

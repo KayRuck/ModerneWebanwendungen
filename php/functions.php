@@ -49,24 +49,27 @@ function loginUser()
  * gespeichert, um die Ladegeschwindigkeit zu optimieren.
  * Das heißt, die Bewertung ist eventuell veraltet.
  *
- * @param buch_id Die intern genutzte ID des Buches
- * @return Die durchschnittliche Bewertung des Buches 
+ * @param $isbn Die IBSN des Buches
+ * @return Die durchschnittliche Bewertung des Buches oder -1 wenn noch keine Bewertung vorliegt
 */
-function getAVGbuchbewertung($buch_id) {
-	$speicherdauer = 60;
+function getAVGbuchbewertung($isbn) {
+	$speicherdauer = 3600; // 1h Cachedauer
 	$cache = phpFastCache();
-	$key = "bewertung$buch_id";
+	$key = "bewertung$isbn";
 	
 	$bewertung = $cache->get($key);
 	if($bewertung == null) {
 		$con = getConnection();
-		$sql = "SELECT AVG(bewertung) `Bewertung` FROM `userbook` WHERE buch_id = $buch_id GROUP BY buch_id";
+		$sql = "SELECT AVG(bewertung) `Bewertung` FROM `userbook` WHERE isbn13 = $isbn GROUP BY isbn13";
 		$query = mysqli_query($con, $sql) or die("ERROR in der Funktion getAVGbuchbewertung");
 		$data = mysqli_fetch_array($query);
 		$bewertung = $data['Bewertung'];
-		
+
 		$cache->set($key, $bewertung, $speicherdauer);
 	}
+	if ($bewertung == null) $bewertung = -1;
+	else $bewertung = sprintf("%.1f", $bewertung);
+
     return $bewertung;
 }
 
@@ -78,12 +81,12 @@ function getAVGbuchbewertung($buch_id) {
  * wird die Bewertung nicht in die Datenbank aufgenommen.
  *
  * @param $username Eindeutiger Name des Nutzers
- * @param $buch_id ID des zu bewertenden Buches
+ * @param $bisbn ID des zu bewertenden Buches
  * @param $bewertung Die Bewertung des Nutzers
 */
-function buchBewerten($username, $buch_id, $bewertung) {
+function buchBewerten($username, $isbn, $bewertung) {
 	$con = getConnection();
-	$sql = "UPDATE userbook SET bewertung = $bewertung WHERE username = '$username' AND buch_id = $buch_id ";
+	$sql = "UPDATE userbook SET bewertung = $bewertung WHERE username = '$username' AND isbn13 = $isbn ";
 	mysqli_query($con, $sql) or die("ERROR in der Funktion buchBewerten");	
 }
 ?>

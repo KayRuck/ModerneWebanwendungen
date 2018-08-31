@@ -14,7 +14,7 @@ if(isset($_POST['loginBtn']))
             <input type="text" placeholder="Benutzername" name="uname" required>
 
             <label for="psw"><strong>Passwort</strong></label>
-            <input type="text" placeholder="Passwort" name="psw" required>
+            <input type="password" placeholder="Passwort" name="psw" required>
 
             <button class="submit modal-button" type="submit" name="loginBtn">Login</button>
             <label>

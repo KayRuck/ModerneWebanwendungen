@@ -48,7 +48,17 @@
         }
         ?>
         <?php
-        if(isset($_SESSION['username'])) { ?>
+        if(isset($_SESSION['username'])) {
+
+            if (isset($_GET['isbn']) && isset($_GET['bewertung'])) {
+                $isbn = $_GET['isbn'];
+                $username = $_SESSION['username'];
+                $bewertung = $_GET['bewertung'];
+
+                buchBewerten($username, $isbn, $bewertung);
+            }
+
+            ?>
 
             <h2>Deine persönliche Übersicht über alle Bücher die dich interessieren.</h2>
 
@@ -73,12 +83,18 @@
                     if(mysqli_num_rows($rightQuery))
                     {
                         echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
-                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th> </tr>";
+                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th> <th>IBSN</th> <th>Bewertung</th></tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
                             echo "<tr>";
                             echo "<td>" . $datensatz['titel'] . "</td>";
                             echo "<td>" . $datensatz['autor'] . "</td>";
                             echo "<td>" . $datensatz['verlag'] . "</td>";
+                            echo "<td>" . $datensatz['isbn13'] . "</td>";
+                            $bewertung = getAVGbuchbewertung($datensatz['isbn13']);
+                            if ($bewertung == -1) {
+                                $bewertung = "Noch nicht bewertet :(";
+                            }
+                            echo "<td>" . $bewertung . "</td>";
                             echo "</tr>";
                         }
                         echo "</table></div>";
@@ -99,13 +115,18 @@
                     $datensatz = $rightQuery;
                     if(mysqli_num_rows($rightQuery)) {
                         echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
-                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> </tr>";
+                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> <th>Bewertung</th> </tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
                             echo "<tr>";
                             echo "<td>" . $datensatz['titel'] . "</td>";
                             echo "<td>" . $datensatz['autor'] . "</td>";
                             echo "<td>" . $datensatz['verlag'] . "</td>";
                             echo "<td>" . $datensatz['isbn13'] . "</td>";
+                            $bewertung = getAVGbuchbewertung($datensatz['isbn13']);
+                            if ($bewertung == -1) {
+                                $bewertung = "Noch nicht bewertet :(";
+                            }
+                            echo "<td>" . $bewertung . "</td>";
                             echo "</tr>";
                         }
                     }
@@ -124,13 +145,35 @@
                     $datensatz = $rightQuery;
                     if(mysqli_num_rows($rightQuery)) {
                         echo "<div class=\"table\"><table id=\"persTable\" class=\"table table-striped table-sm\">";
-                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> </tr>";
+                        echo "<tr> <th>Titel</th> <th>Autor</th> <th>Verlag</th>  <th>ISBN</th> <th>Allgemeine Bewertung</th> <th>Meine Bewertung</th></tr>";
                         while ($datensatz = mysqli_fetch_array($rightQuery)) {
+                            // Bewertung ermitteln
+
                             echo "<tr>";
                             echo "<td>" . $datensatz['titel'] . "</td>";
                             echo "<td>" . $datensatz['autor'] . "</td>";
                             echo "<td>" . $datensatz['verlag'] . "</td>";
                             echo "<td>" . $datensatz['isbn13'] . "</td>";
+
+                            $bewertung = getAVGbuchbewertung($datensatz['isbn13']);
+                            if ($bewertung == -1) $bewertung = "Noch nicht bewertet :(";
+                            echo "<td>" . $bewertung . "</td>";
+
+//                            if (isset($datensatz['bewertung'])) {
+                            if ($datensatz['bewertung'] != null) {
+                                echo "<td>" . $datensatz['bewertung'] . "</td>";
+                            }
+                            else {
+                            ?>
+                            <td>
+                                <form action='mybooks.php' method='get'>
+                                    <input type='hidden' name='isbn' value=' <?php echo $datensatz['isbn13']; ?> '>
+                                    <input type="number" class="myList-btn" name='bewertung' min="1" max="5" step="1" placeholder="Ihre Bewertung">
+                                    <input type='submit' class='myList-btn' name='bewBtn'>
+                                </form>
+                            </td>
+                            <?php
+                            }
                             echo "</tr></div>";
                         }
                     }
