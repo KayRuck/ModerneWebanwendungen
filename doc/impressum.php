@@ -61,14 +61,20 @@
 
             <li><h3>Caching</h3></li>
             <p>
-                Wir haben das Caching mittels phpfastcache realisiert.
-                <!-- TODO Christopher: kurz und knap beschreiben was du dies bzgl. gemacht hast -->
+                In "php/functions.php" liegt die Funktion getAVGbuchbewertung() vor. Sie berechnet die durchschnittliche Bewertung von einem Buch und cacht sie für eine Stunde mithilfe von phpfastcache. Somit muss der Durchschnitt nicht bei jeder Anfrage neu berechnet werden.
             </p>
 
             <li><h3>Suchmaschinenoptimierungen</h3></li>
             <p>
-                Blub
-                <!-- TODO Christopher: s.o. (falls noch nicht geschehen, dein Dokument auf git hochladen und hier erwähnen) -->
+                In der Beispiel-Webseite haben wir folgende Möglichkeiten zur Suchmaschinenoptimierung gefunden:
+				<ul>
+					<ul><li>&lt;meta name="keywords" content="MoWe,WPF,SEO,optimierung,test,HTML5,CSS3,JavaScript"&gt;</li></ul>
+				<li>Kein Title-Tag. Die Website sollte einen Titel haben:</li>
+					<ul><li>&lt;title&gt;MoWe – Übung zu SEO&lt;/title&gt;</li></ul>
+				<li>Der Link "Klick mich!" verweist auf "seo.php". Diese Seite existiert nicht. Daher sollte entweder der Link entfernt oder die verlinkte Seite angelegt werden.</li>
+				<li>Die Seite enthält ein iFrame. Dieser wird von Suchmaschinen ignoriert und sollte vermieden werden.</li>
+				<li>Die Datei "css/style.css" sollte minimiert werden, um Ladezeiten zu verringern.</li>
+				</ul>
             </p>
         </ul>
 
